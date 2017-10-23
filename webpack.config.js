@@ -3,6 +3,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const path = require("path");
 
 const extractSass = new ExtractTextPlugin({
@@ -20,6 +21,12 @@ const copyFiles = new CopyWebpackPlugin([
 const cleanUp = new WebpackCleanupPlugin({
   preview: true,
 });
+
+const styleLint = new StyleLintPlugin({
+  configFile: '.stylelintrc',
+  files: ['**/*.s?(a|c)ss'],
+  syntax: 'scss'
+})
 
 const html = new HtmlWebpackPlugin({
   title: 'Project Demo',
@@ -92,9 +99,9 @@ module.exports = {
   plugins: [
     cleanUp,
     html,
+    styleLint,
     copyFiles,
     extractSass,
     imageMin
-    // uglifyJS
   ]
 }

@@ -43,7 +43,10 @@ npm run prod
 - **source-maps**
 *Builds Source Maps for JS and CSS files*
 
+- **ESLint loader**
+*Provides a pluggable linting utility for JavaScript*
+
 #### To-Do's
 + HTML linting
 + CSS/SASS Linting
-+ JavaScript Linting
++ ~~JavaScript Linting~~

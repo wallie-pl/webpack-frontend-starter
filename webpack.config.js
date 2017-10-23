@@ -49,6 +49,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          emitWarning: true,
+        },
+      },
+      {
         test: /\.scss$/,
         exclude: /node_modules(?!\/webpack-dev-server)/,
         use: 
@@ -74,7 +83,11 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     stats: "errors-only",
-    open: true
+    open: true,
+    overlay: {
+      errors: true,
+      warnings: true,
+    },
   },
   plugins: [
     cleanUp,

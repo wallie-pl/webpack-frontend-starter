@@ -24,6 +24,7 @@ npm run prod
 - **extract-text-webpack-plugin**
 *Extract text from a bundle, or bundles, into a separate file.*
 
+
 - **imagemin-webpack-plugin**
 *Compress all images using ImageMin*
 
@@ -39,5 +40,10 @@ npm run prod
 - **sass-loader**
 *Loads a SASS/SCSS file and compiles it to CSS.*
 
-- **SourceMaps**
+- **source-maps**
 *Builds Source Maps for JS and CSS files*
+
+#### To-Do's
++ HTML linting
++ CSS/SASS Linting
++ JavaScript Linting
